@@ -1,0 +1,87 @@
+body{
+    background-color: rgb(5, 5, 5);
+    color: rgb(10, 10, 10);
+}
+input[type=text],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  /* margin-top: 3px; */
+  margin-bottom: 16px;
+  resize: vertical;
+  margin-right: 30%;
+/* margin-left: 10%; */
+
+}
+
+input[type=Add] {
+    text-align: center;
+  background-color: #04AA6D;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 20%;
+}
+
+input[type=add]:hover {
+  background-color: #45a049;
+}
+
+.new-article {
+    
+   padding: 5%;
+  background-color: #f6f9fc;
+  /* padding: 20%; */
+  width: 50%;
+  margin: 0 auto;
+  /* margin-left: 5%; */
+
+}
+
+.new-article .article {
+  width: 40%;
+  padding: 1rem;
+  margin-left: 6%;
+}
+
+.add-article{
+    margin-top: 2%;
+}
+
+
+.new-article button{
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+ border: none;
+ margin-left: 20%;
+ width: 20%;
+ background-color: #feffff;
+}
+
+body {
+  margin: 2rem 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial,
+  sans-serif;
+}
+
+main {
+  width: 600px;
+  margin-left: 20%;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
