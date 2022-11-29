@@ -204,105 +204,8 @@ section {
     margin-bottom: 50px;
   }
 }
-
-
-
-
-.login {
-  height: 100vh;
-  width: 100%;
-  background-color: #63646b;
-}
-
-.login-form {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #fff;
-  width: 410px;
-  padding: 30px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-}
-
-input[type="checkbox"] {
-  display: none;
-}
-
-.login-form .text {
-  font-size: 35px;
-  font-weight: 600;
-  text-align: center;
-}
-
-.login-form form {
-  margin-top: -20px;
-}
-
-.login-form form .data {
-  height: 45px;
-  width: 100%;
-  margin: 40px 0;
-}
-
-form .data label {
-  font-size: 18px;
-}
-
-form .data input {
-  height: 100%;
-  width: 100%;
-  padding-left: 10px;
-  font-size: 17px;
-  border: 1px solid silver;
-}
-
-
-form .btn {
-  margin: 30px 0;
-  height: 45px;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-}
-
-form .btn a {
-  position: inherit;
-  top: 1rem;
-}
-
-form .btn .inner {
-  height: 100%;
-  width: 300%;
-  position: absolute;
-  left: -100%;
-  z-index: -1;
-  background: -webkit-linear-gradient(right,
-      #56d8e4,
-      #9f01ea,
-      #56d8e4,
-      #9f01ea);
-  transition: all 0.4s;
-}
-
-form .btn:hover .inner {
-  left: 0;
-}
-
-form .btn button {
-  height: 100%;
-  width: 100%;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: pointer;
-}
-
+/* about me style */
+ 
 .about-me {
   display: flex;
   align-items: center;
@@ -373,9 +276,11 @@ form .btn button {
   }
 }
 
+/* blogs css */
+
 .my-blogs .all {
-  display: flex;
   margin-left: 10%;
+
 }
 
 .my-blogs .card p {
@@ -421,7 +326,7 @@ form .btn button {
 }
 
 .mine {
-  display: flex;
+  display:flex;
   margin-right: 10%;
 }
 
@@ -434,6 +339,7 @@ form .btn button {
   background-color: rgb(17, 173, 245);
   border-radius: 30px;
   border: none;
+  cursor: pointer;
   margin: 10px 1px;
   padding: 5px 5px;
   width: 80%;
@@ -446,7 +352,10 @@ form .btn button {
 padding-bottom: 20px; */
   padding: 8px 16px;
 }
+#blog-card{
+  display: inline-flex;
 
+}
 .next {
   margin-right: 70px;
   float: right;
@@ -492,14 +401,9 @@ padding-bottom: 20px; */
     font-size: x-small;
     background: #fcfcfc;
     border-radius: 20px;
-
   }
 
-  .price {
-    color: grey;
-    font-size: 22px;
-  }
-
+ 
   .card .comment {
 
 
@@ -576,12 +480,108 @@ padding-bottom: 20px; */
 
 
 }
+ /* contact css */
 
+
+ 
+.containe {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.email {
+  border: 0;
+  /* padding: 10px; */
+  color: rgb(15, 15, 15);
+}
+.email::placeholder {
+  color: rgba(16, 40, 177, 0.35);
+}
+.update {
+  padding: 10px;
+  width: 20%;
+  min-width: 275px;
+
+  color: rgba(255, 255, 255, 1);
+  margin-top: 10px;
+  transition: all .2s ease-out;
+}
+.failure {
+  color: rgb(247, 11, 11);
+ border: red;
+}
+.success {
+  color: rgb(3, 3, 3);
+
+}
+
+
+
+  
+*{
+  box-sizing: border-box;
+}
+
+h2{
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+.contact-form{
+  padding: 30px 40px;
+}
+
+.form-control{
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.form-control label{
+  color:#777;
+  display: block;
+  margin-bottom: 5px; 
+}
+
+.form-control input
+{
+  /* border: 2px solid #f0f0f0; */
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;   
+outline: none;
+border: 1px solid silver;
+}
+.form-control textarea
+{
+  /* border: 2px solid #f0f0f0; */
+  border-radius: 4px;
+  display: block;
+  /* width: 60%; */
+  padding: 10px;
+  font-size: 14px;   
+outline: none;
+border: 1px solid silver;
+}
+.contact-form button {
+  cursor: pointer;
+  background-color: #3498db;
+  border: 2px solid #3498db;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  padding: 10px;
+  font-size: 16px;
+  margin-top:20px;
+  width:30%;
+}
 .contact {
   background-color: #e2bffaa8;
   display: flex;
-  padding-top: 10vh;
-  height: 100vh;
+  padding-top: 5vh;
+  /* height: 100vh; */
   padding-bottom: 5%;
   /* border-radius: 20px; */
 }
@@ -602,22 +602,11 @@ textarea {
 
 }
 
-input[type=submit] {
-  background-color: #04AA6D;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
 
-input[type=submit]:hover {
-  background-color: #45a049;
-}
 
 .container {
   background-color: #fdfeff;
-  padding: 40px;
+  padding: 5px;
   width: 30%;
   margin-right: 10%;
   /* margin-left: 5%; */
@@ -626,23 +615,135 @@ input[type=submit]:hover {
 
 .container .contact-me {
   width: 40%;
-  padding: 2rem;
+  /* padding: 2rem; */
 }
 
 .first {
   margin-left: 20%;
   padding: 20px;
-  /* padding-top: 10%; */
-  background: #06affdc4;
+  padding-top: 10%;
+  background: #080241fa;
   width: 30%;
   color: #fdfeff;
   text-align: center;
 }
 
-.contact h1 {
-  text-align: center;
-  margin-bottom: 5%;
+.contact-form #user_error,
+.contact-form #mess_error{
+    margin-top: 20px;
+    color: rgb(219, 20, 20);
+display: none;
 }
+
+
+
+  
+  *{
+    box-sizing: border-box;
+  }
+  
+  h2{
+    text-align: center;
+    margin: 0 0 20px;
+  }
+  
+  .contact-form{
+    padding: 30px 40px;
+  }
+  
+  .form-control{
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+  }
+  
+  .form-control label{
+    color:#777;
+    display: block;
+    margin-bottom: 5px; 
+  }
+  
+  .form-control input
+  {
+    /* border: 2px solid #f0f0f0; */
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;   
+outline: none;
+border: 1px solid silver;
+  }
+  .contact-form button {
+    cursor: pointer;
+    background-color: #3498db;
+    border: 2px solid #3498db;
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    margin-top:20px;
+    width:30%;
+  }
+  .contact {
+    background-color: #e2bffaa8;
+    display: flex;
+    padding-top: 5vh;
+    /* height: 100vh; */
+    padding-bottom: 5%;
+    /* border-radius: 20px; */
+  }
+  
+  input[type=text],
+  select,
+  textarea {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 3px;
+    margin-bottom: 16px;
+    resize: vertical;
+    margin-right: 30%;
+  
+  
+  }
+  
+  
+  
+  .container {
+    background-color: #fdfeff;
+    padding: 5px;
+    width: 30%;
+    margin-right: 10%;
+    /* margin-left: 5%; */
+  
+  }
+  
+  .container .contact-me {
+    width: 40%;
+    /* padding: 2rem; */
+  }
+  
+  .first {
+    margin-left: 20%;
+    padding: 20px;
+    padding-top: 10%;
+    background: #080241fa;
+    width: 30%;
+    color: #fdfeff;
+    text-align: center;
+  }
+
+  .contact-form #user_error,
+  .contact-form #email_error{
+      margin-top: 20px;
+      color: rgb(219, 20, 20);
+  display: none;
+  }
+
 
 @media screen and (max-width:610px) {
   .contact {
@@ -722,9 +823,7 @@ input[type=submit]:hover {
   margin-left: 2%;
 }
 
-.flip-card:first-child {
-  /* margin-left: 8.5rem; */
-}
+ /* my-work css */
 
 .flip-card-inner {
   position: relative;
@@ -841,6 +940,7 @@ input[type=submit]:hover {
 
 
 }
+/* skills css */
 
 .skills h1 {
   /* padding-top: 10%; */

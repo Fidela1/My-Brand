@@ -41,11 +41,11 @@
       <a href="#contact">Contact</a><br>
       <a href="login.html">Login</a><br>
     </div>
-    <section  class="title">
+    <section class="title">
       <!-- <div class="paragraph1"> -->
-        <h1>Hello I'm TUYIZERE Fidela</h1> <br>
-        <p>Let's build World together Using technology</p>
-      
+      <h1>Hello I'm TUYIZERE Fidela</h1> <br>
+      <p>Let's build World together Using technology</p>
+
     </section>
     <section id="about">
 
@@ -152,100 +152,59 @@
         <i class="fa-solid fa-circle-chevron-right" style="font-size: 3rem;"></i>
       </div>
     </section>
+
+
     <section id="blogs" class="my-blogs">
 
       <h1>Blogs</h1>
 
       <div class="mine">
         <div class="all">
-          <div class="card">
-            <img src="/img/4.jpg" alt="4" style="width:100%">
-            <h2>Software developer</h2>
-
-            <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem
-            </p>
-            <button onclick="document.location='inn.html '" class="see-more">Read more</button>
-            <div class="signs">
-              <div class="comment"><img src="/img/comment.png" alt="commen" style="width:20px ">30</div>
-              <div class="like"><img src="/img/like.png" alt="lk" style="width: 20px">20</div>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="/img/7.jpg" alt="7" style="width:100%">
-            <h2>Strategy & Implementation</h2>
-
-            <p>
-
-              Data solutions require a data strategy basedon solving business or organizational.
-
-            </p>
-            <button class="see-more">Read more</button>
-            <div class="signs">
-              <div class="comment"><img src="/img/comment.png" alt="commen" style="width:20px ">30</div>
-              <div class="like"><img src="/img/like.png" alt="lk" style="width: 20px">20</div>
-            </div>
-          </div>
-
-
-          <div class="card">
-            <img src="/img/8.jpg" alt="8" style="width:100%">
-            <h2>Build the Right Platform</h2>
-
-            <p>We use the appropriate technology for your needs rather than whatever shiny new.</p>
-            <button class="see-more">Read more</button>
-            <div class="signs">
-              <div class="comment"><img src="/img/comment.png" alt="commen" style="width:20px ">30</div>
-              <div class="like"><img src="/img/like.png" alt="lk" style="width: 20px">20</div>
-            </div>
-          </div>
-          <div class="card">
-            <img src="/img/9.jpg" alt="9" style="width:100%">
-            <h2>Problem Solving</h2>
-            <p>Instead of the preconceived answer you want,
-              get the real story from your data so that you.</p>
-            <button class="see-more">Read more</button>
-            <div class="signs">
-              <div class="comment"><img src="/img/comment.png" alt="commen" style="width:20px ">30</div>
-              <div class="like"><img src="/img/like.png" alt="lk" style="width: 20px">20</div>
-            </div>
-          </div>
+          <div id="blog-card"></div>
         </div>
       </div>
       <a href="#" class="previous">&laquo; Previous</a>
       <a href="#" class="next">Next &raquo;</a>
-
-
-    </section>
-    <section id="contact" class="contact">
-      <div class="first">
-        <h3>Let's get in touch</h3><br>
-        <p>Feel free to send me a message in the contact form</p>
-      </div>
-      <div class="container">
-        <div class="contact-me">
-          <h1>Contact Me</h1>
-          
+      <section id="contact" class="contact">
+        <div class="first">
+          <h3>Let's get in touch</h3><br>
+          <p>Feel free to send me a message in the contact form</p>
         </div>
-        <form>
-          <label for="fname">Name</label>
-          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <div class="container">
+          <div class="contact-me">
 
-          <label for="lname">Email</label>
-          <input type="text" id="lname" name="lastname" placeholder="Your email adress..">
 
-          <label for="subject">Message</label>
-          <textarea id="subject" name="subject" placeholder="Write something.." style="height:80px"></textarea>
+          </div>
+          <form id="form" class="contact-form" method="post" name="form" onsubmit="return validated()">
+            <h1>Contact Me</h1>
+            <div class="form-control">
+              <label for="name">Name</label>
+              <input autocomplete="off" type="text" id="firstname" placeholder="Your name.." name="username">
+              <div id="user_error">please enter your name</div>
+            </div>
+            <div class="form-control">
+              <label>Email</label>
+              <input type="text" class="email" placeholder="Email Address" />
 
-          <input type="submit" value="Submit">
-        </form>
-      </div>
+              <div class="update">Start Typing Above!</div>
 
-    </section>
+            </div>
+            <div class="form-control">
+              <label for="message">Message</label>
+              <textarea autocomplete="off" id="message" cols="20" rows="5" name="message"></textarea>
+              <div id="mess_error">please enter message</div>
+            </div>
 
-    
+            <button type="submit">submit</button>
+          </form>
+        </div>
+
+      </section>
+      <script src="/script/contact.js"></script>
+
+
   </div>
-<script src="./script/index.js"></script>
-  </body>
+  <script src="./script/index.js"></script>
+</body>
 
 </html>

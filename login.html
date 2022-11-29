@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/login.css">
 </head>
 
 <body>
@@ -21,35 +21,25 @@
       <a href="login.html">Login</a>
     </div>
   </header>
-  <section id="login" class="login">
-    <div class="center">
-      <input type="checkbox" id="show" />
-      <!-- <label for="show" class="show-btn">View Form</label> -->
-      <div class="login-form">
-          <div class="text">Login Form</div>
-          <form>
-              <div class="data">
-                  <label>Email or Phone</label>
-                  <input type="text" required />
-              </div>
-              <div class="data">
-                  <label>Password</label>
-                  <input type="password" required />
-              </div>
-              
-              <div class="btn">
-                
-                  <div class="inner"></div>
-                <a href="admin.html">Login</a>
-              </div>
-             
-              </div>
-          </form>
-      </div>
-  </div>
+  <div class="container1">
+    <form id="login-form" class="login-form"  action="./admin.html"  method="post" name="form" onsubmit="return validated()"  >
+        <h2>Login</h2>
+        <div class="form-control" >
+            <label for="username">Username</label>
+            <input autocomplete="off" type="text" id="username" placeholder="Enter Username" name="username">
+            <div id="username_error">please fill your name</div>
+        </div>
+        <div class="form-control">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter password" name="password">
+            <div id="pass_error">please fill your password</div>
+        </div>
+         
+        <button type="submit" > <a href="admin.html">Login</a></button>
+    </form>
+</div>
 
-  </section>
-
+<script src="/script/login.js"></script>
 </body>
 
 </html>

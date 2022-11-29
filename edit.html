@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,25 +8,33 @@
     <link rel="stylesheet" href="/css/edit.css">
     <title>Document</title>
 </head>
+
 <body>
     <section id="edit-article" class="edit-article">
         <div class="new-article">
             <div class="article">
-                <h1>Edit article</h1> <hr>
-              
+                <h1>Edit article</h1>
+                <hr>
+
             </div>
-            <form>
-              <label>Edit article</label> 
-              <textarea id="new article" name="New article"  cols="20" rows="10"></textarea>
-              <div class="article">
-              <input type="Add" value="Edit">
-              <button> <a href="admin.html">cancel</a></button>
-                
-              
-            </div>
-           
-            </div>
-            </form>
-          </div>
+            <div id="edit"></div>
+            <form class="edit-article">
+                <label>Title</label>
+                <input type="text" id="title" name="title">
+                <label>Edit article</label>
+                <textarea  name="description" cols="20" rows="10" id="description"></textarea>
+                <div class="article">
+                    <button type="submit" value="send">Submit</button>
+
+                    
+
+
+                </div>
+
+        
+        </form>
+        </div>
+        <script src="./script/edit.js"></script>
 </body>
+
 </html>
