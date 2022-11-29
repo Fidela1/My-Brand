@@ -21,4 +21,14 @@ textarea {
   margin-right: 30%;
 
 
+
 }
+.my-image{
+    display: flex;
+}
+.my-image img{
+    border-radius: 60%;
+
+}
+
+
