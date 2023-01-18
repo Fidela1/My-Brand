@@ -11,7 +11,6 @@
     location.href = "login.html";
   }
    
-   
 const logout = async  () => {
     localStorage.removeItem('authData')
     location.href = "login.html";
