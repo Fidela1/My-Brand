@@ -1,41 +1,59 @@
-var username = document.forms['form']['username'];
-var password = document.forms['form']['password'];
 
-var username_error = document.getElementById('username_error');
-var pass_error = document.getElementById('pass_error');
+//Toaster message--------------------------------------------------
+function myToasterfunction(successfully) {
+   console.log('successful:-', successfully)
+   var x = document.getElementById("snackbar");
+   x.className = "show";
+   x.innerHTML = `${successfully}`;
+   setTimeout(function () {
+     x.className = x.className.replace("show", "");
+   }, 5000);
+ }
+ function errorToasterfunction(successfully) {
+   var x = document.getElementById("snackbarFailure");
+   x.className = "show";
+   x.innerHTML = `${successfully}`;
+   setTimeout(function () {
+     x.className = x.className.replace("show", "");
+   }, 5000);
+ }
 
-username.addEventListener('textInput',username_verify);
-password.addEventListener('textInput',pass_verify);
+//Signin -----------------------------------------------------------
+async function signIn(url = "", data = {}) {
+  console.log("url:---", url, "data:---",data)
+       const response = await fetch(url, {
+         method: "POST",
+         mode: "cors",
+         cache: "no-cache",
+         credentials: "same-origin",
+         headers: {
+           "Content-Type": "application/json",
+         },
+         redirect: "follow",
+         referrerPolicy: "no-referrer",
+         body: JSON.stringify(data),
+       });
+       return response.json();
+     }
 
-function validated(){
-if(username.value.length < 3){
-   username.style.border = "1px solid red";
-   username_error.style.display = "block";
-   username.focus();
-   return false;
-}
-if(password.value.length < 6){
-   password.style.border = "1px solid red";
-  pass_error.style.display = "block";
-   password.focus();
-   return false;
-}
-
-}
-function username_verify(){
-   if(username.value.length >=2){
-       username.style.border = "1px solid silver";
-       username_error.style.display = "none";
-       return true;
+const formLogin = document.querySelector(".form-container-login");
+     formLogin.addEventListener("submit", (e) => {
+       e.preventDefault();
+       const userInfo = {};
+       userInfo.email = formLogin.email.value;
+       userInfo.password = formLogin.password.value;
+       console.log("userInfo:--",userInfo)
+       signIn("http://localhost:3080/api/v1/users/login", userInfo).then((data) => {
+          
+         if(data.status === "success"){
+           console.log("data:---", data)
+          
+         localStorage.setItem("authData", JSON.stringify(data));
        
-   }
-}
-function pass_verify(){
-   if(password.value.length >=5){
-       password.style.border = "1px solid silver";
-       pass_error.style.display = "none";
-       return true;
-   }
-   window.location("/admin.html");
-   
-}
+
+           location.href = "admin.html";
+         }})
+       .catch((err) => {
+       
+       });
+     });
