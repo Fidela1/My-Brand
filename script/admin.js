@@ -16,7 +16,7 @@ function editArticle(event){
 const blogEdit = event.target.id;
 console.log(blogEdit);
 let edit = blogArr.find(each => blogEdit.includes(each.title));
-window.location.href = "article.html?title="+edit.title;
+window.location.href = "edit.html?title="+edit.title;
 }
 function myFunction(blog){
     console.log("my",blog);
