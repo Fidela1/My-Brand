@@ -68,6 +68,25 @@ document.getElementById('readUrl').addEventListener('change', function(){
 }    console.log('blogtitle:-',blogTitle)
 
 
+//create blog -----------------------------------------------------------
+async function createBlog(url = "", data = {}) {
+  console.log("url:---", url, "data:---",data)
+       const response = await fetch(url, {
+         method: "POST",
+         mode: "cors",
+         cache: "no-cache",
+         credentials: "same-origin",
+         headers: {
+           "Content-Type": "application/json",
+           'Authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzc5MDFhZTQ1NzI2MDM5YTE1ZjNkMCIsImlhdCI6MTY3NDAyMjk0MywiZXhwIjoxNjgxNzk4OTQzfQ.dRosGUx43UTLvTbiutaSoERICFAiDZakVj-hb1RAK1U'
+
+         },
+         redirect: "follow",
+         referrerPolicy: "no-referrer",
+         body: JSON.stringify(data),
+       });
+       return response.json();
+     }
 
 
   const formBlog= document.querySelector(".article-form");
@@ -78,28 +97,23 @@ document.getElementById('readUrl').addEventListener('change', function(){
     console.log('hollo');
     const arr=[]
     blogInfo["title"] = formBlog.title.value;
-    blogInfo.image = formBlog.image.value;
+    // blogInfo.image = formBlog.image.value;
     blogInfo.description = formBlog.description.value;
 
-    console.log(strdata,"strdat:-",storedData)
-    if (strdata){
-        strdata.push(blogInfo)
-        localStorage.setItem("blog",  JSON.stringify(strdata));
+   createBlog("http://localhost:3080/api/v1/blogs", blogInfo).then((data) => {
+          
+         if(data.status === "success"){
+           console.log("data:---", data)
 
-
-    }
-
-
-     else{
-        arr.push(blogInfo)
-        console.log(arr)
-        localStorage.setItem("blog",  JSON.stringify(arr));
-      }
-
+           location.href = "admin.html";
+         }})
+       .catch((err) => {
+       
+       });
 
 
 
   console.log(blogInfo);
 
-  window.location.href = "/admin.html";
+  // window.location.href = "/admin.html";
   });

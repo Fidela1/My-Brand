@@ -386,6 +386,7 @@ form .btn button {
   box-shadow: 0 4px 8px 0 rgba(10, 10, 10, 0.562);
   color: black;
   text-align: center;
+  display: inline-block;
   margin-top: 5%;
   margin-right: 40px;
   width: 25%;
