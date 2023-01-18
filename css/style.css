@@ -1042,4 +1042,101 @@ border: 1px solid silver;
   background-color: #f75058;
   margin-bottom: 20px;
 }
+/* ------------------------ Toaster message --------------------------------------------------------- */
+#snackbar {
+  visibility: hidden;
+  min-width: 400px;
+  margin-left: -125px;
+  background-color: rgb(5, 107, 5);
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  font-size: 28px;
+  padding: 32px;
+  position: fixed;
+  z-index: 100;
+  left: 50%;
+  bottom: 300px;
+}
 
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 1s, fadeout 1.5s 3.5s;
+  animation: fadein 1s, fadeout 1.5s 3.5s;
+}
+
+#snackbarFailure {
+  visibility: hidden;
+  min-width: 400px;
+  margin-left: -125px;
+  background-color: rgb(173, 5, 5);
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  font-size: 28px;
+  padding: 32px;
+  position: fixed;
+  z-index: 100;
+  left: 50%;
+  bottom: 300px;
+}
+
+#snackbarFailure.show {
+  visibility: visible;
+  -webkit-animation: fadein 1s, fadeout 1.5s 3.5s;
+  animation: fadein 1s, fadeout 1.5s 3.5s;
+}
+
+
+
+
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 100;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 300px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 300px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 300px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 300px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 300px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 300px;
+    opacity: 1;
+  }
+}
+
+/* --------------------end message--------------------------------------- */

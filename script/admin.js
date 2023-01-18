@@ -4,12 +4,21 @@ let blogArr =JSON.parse(myBlogs).reverse();
 console.log("blogArr:-",blogArr);
 const newArr = blogArr.map(myFunction);
 
-document.getElementById("blog-row").innerHTML = newArr;
-function deleteArticle(event){
-  const blogDelete = event.target.id;
-  blogArr = blogArr.filter(each => !blogDelete.includes(each.title))
- localStorage.setItem("blog",JSON.stringify(blogArr));
- window.location.reload();
+ try{
+   let data = localStorage.getItem("authData");
+    let newData = JSON.parse(data);
+    console.log("newData",newData)
+ if(!newData.token){
+    location.href = "login.html";
+ }
+  }catch(error){
+    console.log("err", error)
+    location.href = "login.html";
+  }
+   
+const logout = async  () => {
+    localStorage.removeItem('authData')
+    location.href = "login.html";
 }
 
 function editArticle(event){
