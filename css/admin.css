@@ -3,7 +3,8 @@ body{
 }
 table{
   margin-top: 5%;
-  width: 70%;
+  width: 75%;
+  /* margin-left: 5%; */
   border-collapse: collapse;
   background-color: white;
   /* margin: 0 auto; */
