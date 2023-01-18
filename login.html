@@ -27,20 +27,20 @@
       <!-- <label for="show" class="show-btn">View Form</label> -->
       <div class="login-form">
           <div class="text">Login Form</div>
-          <form>
+          <form class="form-container-login">
               <div class="data">
                   <label>Email or Phone</label>
-                  <input type="text" required />
+                  <input type="email" name ="email" required />
               </div>
               <div class="data">
                   <label>Password</label>
-                  <input type="password" required />
+                  <input type="password" name="password" required />
               </div>
-              
+              <div id="snackbar"></div>
+              <div id="snackbarFailure"></div>
               <div class="btn">
                 
-                  <div class="inner"></div>
-                <a href="admin.html">Login</a>
+                <input type="submit" value="Login">
               </div>
              
               </div>
@@ -51,5 +51,5 @@
   </section>
 
 </body>
-
+   <script src="./script/login.js"></script>
 </html>

@@ -15,6 +15,16 @@ table{
   margin-left: 20%;
   
 }
+.logout{
+  width:fit-content;
+  margin: 20px;
+  cursor:pointer;
+  text-align: center;
+  color: red;
+}
+.logout-container{
+  width: 100%;
+}
 th,td{
   text-align: left;
   padding: 10px;
