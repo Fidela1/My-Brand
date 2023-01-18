@@ -1,15 +1,13 @@
 
-
-
   var title = document.forms['form']['title'];
   var description = document.forms['form']['description'];
-  
+
   var title_error = document.getElementById('title_error');
   var desc_error = document.getElementById('desc_error');
-  
+
   title.addEventListener('textInput',title_verify);
   description.addEventListener('textInput',desc_verify);
-  
+
   function validated(){
   if(title.value.length < 3){
      title.style.border = "1px solid red";
@@ -23,14 +21,14 @@
      description.focus();
      return false;
   }
-  
+
   }
   function title_verify(){
      if(title.value.length >=2){
          title.style.border = "1px solid silver";
          title_error.style.display = "none";
          return true;
-         
+
      }
   }
   function desc_verify(){
@@ -82,16 +80,16 @@ document.getElementById('readUrl').addEventListener('change', function(){
     blogInfo["title"] = formBlog.title.value;
     blogInfo.image = formBlog.image.value;
     blogInfo.description = formBlog.description.value;
-    
+
     console.log(strdata,"strdat:-",storedData)
     if (strdata){
         strdata.push(blogInfo)
         localStorage.setItem("blog",  JSON.stringify(strdata));
 
-        
+
     }
-    
-      
+
+
      else{
         arr.push(blogInfo)
         console.log(arr)
@@ -99,8 +97,8 @@ document.getElementById('readUrl').addEventListener('change', function(){
       }
 
 
-    
-    
+
+
   console.log(blogInfo);
 
   window.location.href = "/admin.html";
