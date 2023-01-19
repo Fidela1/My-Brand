@@ -40,16 +40,6 @@
     }
 
 
-document.getElementById('readUrl').addEventListener('change', function(){
-    if (this.files[0] ) {
-      var picture = new FileReader();
-      picture.readAsDataURL(this.files[0]);
-      picture.addEventListener('load', function(event) {
-        document.getElementById('uploadedImage').setAttribute('src', event.target.result);
-        document.getElementById('uploadedImage').style.display = 'block';
-      });
-    }
-  });
 
 
   // local storage
@@ -68,38 +58,87 @@ document.getElementById('readUrl').addEventListener('change', function(){
 }    console.log('blogtitle:-',blogTitle)
 
 
+//create blog -----------------------------------------------------------
+async function createBlog(url = "", data = {}) {
+  console.log("url:---", url, "data:---",data)
+       const response = await fetch(url, {
+         method: "POST",
+         mode: "cors",
+         cache: "no-cache",
+         credentials: "same-origin",
+         headers: {
+           "Content-Type": "application/json",
+           'Authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzc5MDFhZTQ1NzI2MDM5YTE1ZjNkMCIsImlhdCI6MTY3NDAyMjk0MywiZXhwIjoxNjgxNzk4OTQzfQ.dRosGUx43UTLvTbiutaSoERICFAiDZakVj-hb1RAK1U'
 
+         },
+         redirect: "follow",
+         referrerPolicy: "no-referrer",
+         body: JSON.stringify(data),
+       });
+       return response.json();
+     }
+     const url = "https://api.cloudinary.com/v1_1/demo/image/upload";
 
   const formBlog= document.querySelector(".article-form");
 
-  formBlog.addEventListener("submit", (e) => {
+  formBlog.addEventListener("submit",async (e) => {
     e.preventDefault();
     const blogInfo = {};
     console.log('hollo');
     const arr=[]
     blogInfo["title"] = formBlog.title.value;
-    blogInfo.image = formBlog.image.value;
     blogInfo.description = formBlog.description.value;
 
-    console.log(strdata,"strdat:-",storedData)
-    if (strdata){
-        strdata.push(blogInfo)
-        localStorage.setItem("blog",  JSON.stringify(strdata));
 
-
+    // upload image
+    console.log("file")
+    const files = document.querySelector(".file-upload").files;
+    console.log("file:-", files)
+    const formData = new FormData();
+  
+    for (let i = 0; i < files.length; i++) {
+      let file = files[i];
+    
+      formData.append("file", file);
+      formData.append("upload_preset", "docs_upload_example_us_preset");
+  
+      console.log("formData:-", formData)
+  
+      const response = await fetch(url, {
+        method: "POST",
+        body: formData
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+           // blogInfo.image = formBlog.image.value;
+          console.log("data:-", data)
+          return data
+          // document.getElementById("data").innerHTML += data;
+        });
+        console.log("res:---", response.url)
+        blogInfo["image"] = response.url;
+        
     }
 
+   createBlog("http://localhost:3080/api/v1/blogs", blogInfo).then((data) => {
+          
+         if(data.status === "success"){
+           console.log("data:---", data)
 
-     else{
-        arr.push(blogInfo)
-        console.log(arr)
-        localStorage.setItem("blog",  JSON.stringify(arr));
-      }
-
+           location.href = "admin.html";
+         }})
+       .catch((err) => {
+       
+       });
 
 
 
   console.log(blogInfo);
 
-  window.location.href = "/admin.html";
+  // window.location.href = "/admin.html";
   });
+
+ 
+

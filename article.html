@@ -22,24 +22,27 @@
         <hr>
 
       </div>
-      <form id="form" class="article-form"  name="form" onsubmit="return validated()">
+      <form id="form" class="article-form"  name="form"  enctype="multipart/form-data" onsubmit="return validated()">
         <div class="form-control">
           <label for="title">Title</label>
-          <input autocomplete="off" type="text" id="title" placeholder="Enter title" name="title">
+          <input autocomplete="off" type="text" id="title" required placeholder="Enter title" name="title">
           <div id="title_error">please fill your title</div>
         </div>
         <div class="form-control">
           <label>Description</label>
-     <textarea name="description" id="description" cols="30" rows="10"></textarea>
+     <textarea name="description" id="description"  required cols="30" rows="10"></textarea>
      <div id="desc_error">please fill your description</div>
         </div>
-        <input type='file' id="readUrl" name="image">
+        <!-- <input type='file' id="readUrl" name="image">
         <img id="uploadedImage" src="#" alt="Uploaded Image" accept="image/png, image/jpeg" width="100px" height="80px" style="display:none;">
+        -->
+        <input type="file" class="file-upload" name="files[]" multiple>
         <button type="submit" value="send">Submit</button>
 
-
+      </form>
 
     </div>
+    
 
 
     </div>
