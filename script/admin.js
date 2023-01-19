@@ -10,7 +10,7 @@
      console.log("err", error)
      location.href = "login.html";
    }
-    
+ 
     
  const logout = async  () => {
      localStorage.removeItem('authData')
@@ -75,7 +75,7 @@ function myFunction(blog){
  
   const articles = `
   <tr>
-  <td> <img src="/img/" alt="4" style="width:80px ;height:80px"></td>
+  <td> <img src=${blog.blog_image} alt="4" style="width:80px ;height:80px"></td>
   <td> ${blog.title}</td>
   <td> ${blog.description}</td>
   <td><button onclick = deleteArticle('${blog._id}')  id="delete-blog ${blog.title}" > delete</button>

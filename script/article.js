@@ -40,16 +40,6 @@
     }
 
 
-document.getElementById('readUrl').addEventListener('change', function(){
-    if (this.files[0] ) {
-      var picture = new FileReader();
-      picture.readAsDataURL(this.files[0]);
-      picture.addEventListener('load', function(event) {
-        document.getElementById('uploadedImage').setAttribute('src', event.target.result);
-        document.getElementById('uploadedImage').style.display = 'block';
-      });
-    }
-  });
 
 
   // local storage
@@ -87,18 +77,50 @@ async function createBlog(url = "", data = {}) {
        });
        return response.json();
      }
-
+     const url = "https://api.cloudinary.com/v1_1/demo/image/upload";
 
   const formBlog= document.querySelector(".article-form");
 
-  formBlog.addEventListener("submit", (e) => {
+  formBlog.addEventListener("submit",async (e) => {
     e.preventDefault();
     const blogInfo = {};
     console.log('hollo');
     const arr=[]
     blogInfo["title"] = formBlog.title.value;
-    // blogInfo.image = formBlog.image.value;
     blogInfo.description = formBlog.description.value;
+
+
+    // upload image
+    console.log("file")
+    const files = document.querySelector(".file-upload").files;
+    console.log("file:-", files)
+    const formData = new FormData();
+  
+    for (let i = 0; i < files.length; i++) {
+      let file = files[i];
+    
+      formData.append("file", file);
+      formData.append("upload_preset", "docs_upload_example_us_preset");
+  
+      console.log("formData:-", formData)
+  
+      const response = await fetch(url, {
+        method: "POST",
+        body: formData
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+           // blogInfo.image = formBlog.image.value;
+          console.log("data:-", data)
+          return data
+          // document.getElementById("data").innerHTML += data;
+        });
+        console.log("res:---", response.url)
+        blogInfo["image"] = response.url;
+        
+    }
 
    createBlog("http://localhost:3080/api/v1/blogs", blogInfo).then((data) => {
           
@@ -117,3 +139,6 @@ async function createBlog(url = "", data = {}) {
 
   // window.location.href = "/admin.html";
   });
+
+ 
+
