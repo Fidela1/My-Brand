@@ -17,7 +17,9 @@ textarea {
 margin-left: 10%;
 
 }
-
+.file-upload{
+  margin-left: 10%;
+}
 input[type=Add] {
     text-align: center;
   background-color: #04AA6D;
@@ -68,4 +70,5 @@ input[type=add]:hover {
   font-size: 16px;
   margin-top:20px;
   width:30%;
+  margin-left: 30%;
 }

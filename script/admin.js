@@ -37,7 +37,7 @@
 
  const deleteArticle = async  (blogId) => {
     console.log(blogId)
-    deleteBlog("http://localhost:3080/api/v1/blogs/", blogId).then((data) => {
+    deleteBlog("https://my-brand-backend-production.up.railway.app/api/v1/blogs/", blogId).then((data) => {
           
     if(data.status === "success"){
       console.log("data:---", data)
@@ -57,7 +57,7 @@ const editArticle =  (blogId) => {
 
  
  const getData = async  () => {
-     const response = await fetch("http://localhost:3080/api/v1/blogs")
+     const response = await fetch("https://my-brand-backend-production.up.railway.app/api/v1/blogs")
      const result = await response.json();
      console.log(result)
     let blogArr =result.data.blog;
@@ -77,7 +77,7 @@ function myFunction(blog){
   <tr>
   <td> <img src=${blog.blog_image} alt="4" style="width:80px ;height:80px"></td>
   <td> ${blog.title}</td>
-  <td> ${blog.description}</td>
+  <td> ${blog.description.substring(0,20)}</td>
   <td><button onclick = deleteArticle('${blog._id}')  id="delete-blog ${blog.title}" > delete</button>
   <button onclick = editArticle('${blog._id}') id = "edit-blog ${blog.title}">edit</button></td>
   </tr>

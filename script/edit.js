@@ -1,3 +1,5 @@
+ 
+ 
  // local storage
 
  try{
@@ -19,7 +21,7 @@ let blogid = params.id // "some_value"
 console.log(blogid)
 
 
-  const response =  fetch(`http://localhost:3080/api/v1/blogs/${blogid}`) .then((response) => {
+  const response =  fetch(`https://my-brand-backend-production.up.railway.app/api/v1/blogs/${blogid}`) .then((response) => {
     return response.json();
   })
   .then((data) => {
@@ -100,7 +102,7 @@ async function updateBlog(url = "", data = {}) {
         
     }}
 
-   updateBlog(`http://localhost:3080/api/v1/blogs/${blogid}`, blogInfo).then((data) => {
+   updateBlog(`https://my-brand-backend-production.up.railway.app/api/v1/blogs/${blogid}`, blogInfo).then((data) => {
           
          if(data.status === "success"){
            console.log("data:---", data)

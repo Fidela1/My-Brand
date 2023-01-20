@@ -43,7 +43,7 @@ const formLogin = document.querySelector(".form-container-login");
        userInfo.email = formLogin.email.value;
        userInfo.password = formLogin.password.value;
        console.log("userInfo:--",userInfo)
-       signIn("http://localhost:3080/api/v1/users/login", userInfo).then((data) => {
+       signIn("https://my-brand-backend-production.up.railway.app/api/v1/users/login", userInfo).then((data) => {
           
          if(data.status === "success"){
            console.log("data:---", data)
