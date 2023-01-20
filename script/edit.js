@@ -18,6 +18,13 @@ if(!newData.token){
 });
 // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
 let blogid = params.id // "some_value"
+
+let authJson = localStorage.getItem("authData")
+// console.log("json token:---",authJson)
+let authObj = JSON.parse(authJson)
+// console.log("obj token:---",authObj)
+let accessToken =authObj.token
+// console.log("token:---",accessToken)
 console.log(blogid)
 
 
@@ -47,7 +54,7 @@ async function updateBlog(url = "", data = {}) {
          credentials: "same-origin",
          headers: {
            "Content-Type": "application/json",
-           'Authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzc5MDFhZTQ1NzI2MDM5YTE1ZjNkMCIsImlhdCI6MTY3NDAyMjk0MywiZXhwIjoxNjgxNzk4OTQzfQ.dRosGUx43UTLvTbiutaSoERICFAiDZakVj-hb1RAK1U'
+           'Authorization':`Bearer ${accessToken}`
 
          },
          redirect: "follow",
