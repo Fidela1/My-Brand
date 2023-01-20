@@ -6,11 +6,12 @@
 });
 
 let authJson = localStorage.getItem("authData")
-console.log("json token:---",authJson)
+// console.log("json token:---",authJson)
 let authObj = JSON.parse(authJson)
-console.log("obj token:---",authObj)
+// console.log("obj token:---",authObj)
 let accessToken =authObj.token
-console.log("token:---",accessToken)
+// console.log("token:---",accessToken)
+const url = "https://api.cloudinary.com/v1_1/demo/image/upload";
 
   
   var title = document.forms['form']['title'];
@@ -53,9 +54,6 @@ console.log("token:---",accessToken)
      }
     }
 
-
-
-
   // local storage
   let storedData = localStorage.getItem("blog");
   console.log(storedData);
@@ -92,7 +90,6 @@ async function createBlog(url = "", data = {}) {
        });
        return response.json();
      }
-     const url = "https://api.cloudinary.com/v1_1/demo/image/upload";
 
   const formBlog= document.querySelector(".article-form");
 
