@@ -14,7 +14,7 @@ const deleteData = (image, title, desc ) => {
 
 }
 const getData = async  () => {
-  const response = await fetch("http://localhost:3080/api/v1/blogs")
+  const response = await fetch("https://my-brand-backend-production.up.railway.app/api/v1/blogs")
   const result = await response.json();
   console.log(result)
  let blogArr =result.data.blog;
@@ -28,7 +28,12 @@ const getData = async  () => {
 }
 getData();
 
+const editArticle =  (blogId) => {
+  console.log(blogId)
 
+    location.href = `first-blog.html?id=${blogId}`;
+ 
+}
 
 
 function myFunction(blog) {
@@ -36,12 +41,14 @@ function myFunction(blog) {
   
   const blogCard = `
   <div class="card">
-   <img src=${blog.blog_image} alt="4" style="width:80px ;height:80px">
+   <img src=${blog.blog_image} alt="4" style="width:100% ;height:90px">
 
  
   <h2>${blog.title} </h2>
-  <p>${blog.description}</p>
-  <button onclick = "deleteData('${blog.blog_image}','${blog.title}', '${blog.description}')" class="see-more">Read more</button>
+  <p>${blog.description.substring(0,20)}</p>
+  
+  <button onclick = editArticle('${blog._id}') id = "edit-blog ${blog.title}" class="see-more">Read more</button>
+ 
   <div class="signs">
     <div class="comment"><img src="/img/comment.png" alt="commen" style="width:20px ">0</div>
     <div class="like"><img src="/img/like.png" alt="lk" style="width: 20px">0</div>

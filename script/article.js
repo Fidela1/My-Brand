@@ -1,4 +1,11 @@
 
+ tinymce.init({
+  selector: 'textarea',
+  plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+  toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+});
+
+  
   var title = document.forms['form']['title'];
   var description = document.forms['form']['description'];
 
@@ -122,7 +129,7 @@ async function createBlog(url = "", data = {}) {
         
     }
 
-   createBlog("http://localhost:3080/api/v1/blogs", blogInfo).then((data) => {
+   createBlog("https://my-brand-backend-production.up.railway.app/api/v1/blogs", blogInfo).then((data) => {
           
          if(data.status === "success"){
            console.log("data:---", data)

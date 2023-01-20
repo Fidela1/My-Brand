@@ -372,7 +372,9 @@ form .btn button {
   
   }
 }
-
+#blog-card{
+  display: flex;
+}
 .my-blogs .all {
   display: flex;
   margin-left: 10%;
@@ -380,6 +382,7 @@ form .btn button {
 
 .my-blogs .card p {
   font-size: small;
+  
 }
 
 .card {
@@ -389,18 +392,14 @@ form .btn button {
   display: inline-block;
   margin-top: 5%;
   margin-right: 40px;
-  width: 25%;
+  width: 80%;
   height: auto;
   font-size: x-small;
-  background: #fcfcfc;
+  background: #fdfcfc;
   border-radius: 20px;
 
 }
 
-.price {
-  color: grey;
-  font-size: 22px;
-}
 
 .card .comment {
 
@@ -425,10 +424,7 @@ form .btn button {
   margin-bottom: 10%;
 }
 
-.mine {
-  display: flex;
-  margin-right: 10%;
-}
+
 
 .my-blogs h1 {
   text-align: center;
@@ -635,6 +631,7 @@ input[type=submit]:hover {
 }
 
 .first {
+ padding-top: 20%;
   margin-left: 20%;
   padding: 20px;
   /* padding-top: 10%; */
