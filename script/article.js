@@ -5,6 +5,13 @@
   toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
 });
 
+let authJson = localStorage.getItem("authData")
+console.log("json token:---",authJson)
+let authObj = JSON.parse(authJson)
+console.log("obj token:---",authObj)
+let accessToken =authObj.token
+console.log("token:---",accessToken)
+
   
   var title = document.forms['form']['title'];
   var description = document.forms['form']['description'];
@@ -67,6 +74,7 @@
 
 //create blog -----------------------------------------------------------
 async function createBlog(url = "", data = {}) {
+
   console.log("url:---", url, "data:---",data)
        const response = await fetch(url, {
          method: "POST",
@@ -75,7 +83,7 @@ async function createBlog(url = "", data = {}) {
          credentials: "same-origin",
          headers: {
            "Content-Type": "application/json",
-           'Authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzc5MDFhZTQ1NzI2MDM5YTE1ZjNkMCIsImlhdCI6MTY3NDAyMjk0MywiZXhwIjoxNjgxNzk4OTQzfQ.dRosGUx43UTLvTbiutaSoERICFAiDZakVj-hb1RAK1U'
+           'Authorization':`Bearer ${accessToken}`
 
          },
          redirect: "follow",
@@ -93,8 +101,9 @@ async function createBlog(url = "", data = {}) {
     const blogInfo = {};
     console.log('hollo');
     const arr=[]
+    console.log("formBLOG:", tinyMCE.get('description').getContent())
     blogInfo["title"] = formBlog.title.value;
-    blogInfo.description = formBlog.description.value;
+    blogInfo.description =  tinyMCE.get('description').getContent();
 
 
     // upload image
