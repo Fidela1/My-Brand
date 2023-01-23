@@ -28,7 +28,7 @@ const getData = async  () => {
 }
 getData();
 
-const editArticle =  (blogId) => {
+const singleArticle =  (blogId) => {
   console.log(blogId)
 
     location.href = `first-blog.html?id=${blogId}`;
@@ -47,7 +47,7 @@ function myFunction(blog) {
   <h2>${blog.title} </h2>
   <p>${blog.description.substring(0,20)}</p>
   
-  <button onclick = editArticle('${blog._id}') id = "edit-blog ${blog.title}" class="see-more">Read more</button>
+  <button onclick = singleArticle('${blog._id}') id = "single-blog ${blog.title}" class="see-more">Read more</button>
  
   <div class="signs">
     <div class="comment"><img src="/img/comment.png" alt="commen" style="width:20px ">0</div>

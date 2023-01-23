@@ -20,7 +20,7 @@ if(!newData.token){
 let blogid = params.id // "some_value"
 
 let authJson = localStorage.getItem("authData")
-// console.log("json token:---",authJson)
+// console.log("json token:---",authJson)\
 let authObj = JSON.parse(authJson)
 // console.log("obj token:---",authObj)
 let accessToken =authObj.token

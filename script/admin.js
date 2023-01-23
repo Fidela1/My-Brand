@@ -68,7 +68,7 @@ const editArticle =  (blogId) => {
     let blogArr =result.data.blog;
     console.log("blogArr:-",blogArr);
     const reverseArr=blogArr.reverse()
-    const firstBlogs = reverseArr.slice(0, 4);
+    const firstBlogs = reverseArr.slice(0, 5);
     console.log("blogArr:-",blogArr);
     const newArr = firstBlogs.map(myFunction);
     document.getElementById("blog-row").innerHTML = newArr;
