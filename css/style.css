@@ -179,11 +179,11 @@ section {
   width: 150px;
   height: 40px;
   border-radius: 12px;
-  background-color: #1388cc;
+  background-color: #1080c0;
   border-style: none;
   margin-top: 20px;
   margin-left: 20px;
-
+  color: white;
 }
 .title h1 {
   margin-bottom: 10px;
@@ -325,7 +325,7 @@ form .btn button {
 
 .about-me {
   display: flex;
-  align-items: center;
+
   height: 100vh;
   text-align: justify;
   width: 100%;
@@ -334,18 +334,28 @@ form .btn button {
 .about-me .about-content {
   width: 50%;
   padding: 2rem;
-  /* border: #ce1010 solid; */
+  font-family: sans-serif;
+  margin-right: 5rem;
+  margin-top: 12rem;
+
+}
+.about-content button{
+  background-color: #1080c0;
+  width: 80px;
+  height: 30px;
+  border-style: none;
+  margin-top: 2rem;
+  color: white;
 }
 
 .about-me .about-content h1 {
-  padding-bottom: 4rem;
+  padding-bottom: 3rem;
 
 }
 
 .about-me .about-image {
   width: 45%;
   padding: 8rem;
-  padding-top: 6rem;
   /* border: #bb1212 solid; */
 }
 
@@ -840,121 +850,82 @@ input[type=submit]:hover {
 }
 
 .myWork h1 {
-  margin-bottom: 5%;
+  margin-bottom: 8rem;
   text-align: center;
 }
 
-.skills {
 
-  padding-left: 10%;
-}
-
-.my-skills {
-  width: 50%;
-  background-color: rgb(39, 38, 38);
-
-
-}
-
-.skills h1 {
-  /* padding-top: 10%; */
-  margin-bottom: 5%;
-
-  padding-left: 10%;
-}
-
-.knowledge {
-  text-align: right;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  color: white;
-}
-
-.html {
-  width: 90%;
-  background-color: #f75058;
-  margin-bottom: 20px;
-}
-
-.css {
-  width: 80%;
-  background-color: #f75058;
-  margin-bottom: 20px;
-}
-
-.js {
-  width: 70%;
-  background-color: #f75058;
-  margin-bottom: 20px;
-}
-
-.git {
-  width: 65%;
-  background-color: #f75058;
-  margin-bottom: 20px;
-}
-
-.github {
-  width: 60%;
-  background-color: #f75058;
-  margin-bottom: 20px;
-}
 
 
 .skills {
-
-  padding-left: 10%;
-}
-
-.my-skills {
   width: 50%;
-  background-color: rgb(39, 38, 38);
-
-
+  align-items: center;
+  height: 100vh;
+  text-align: justify;
+  width: 100%;
 }
-
+.my-skill {
+  display: flex;
+  margin-left: 20%;
+}
+.my-skills {
+  background-color: rgb(247, 246, 246);
+}
+.hcss {
+  width: 35%;
+  margin-right: 10%;
+}
+.hcss p{
+  margin-bottom: 15px;
+}
+.java {
+  width: 35%;
+}
+.java p{
+  margin-bottom: 15px;
+}
 .skills h1 {
+  text-align: center;
   padding-top: 10%;
-  margin-bottom: 5%;
-
-  padding-left: 10%;
+  margin-bottom: 5rem;
+  margin-left: 5rem;
 }
 
 .knowledge {
   text-align: right;
-  padding-top: 10px;
   padding-bottom: 10px;
   color: white;
+  margin-bottom: 20px;
 }
 
 .html {
-  width: 90%;
-  background-color: #f75058;
-  margin-bottom: 20px;
+  width: 95%;
+  background-color: #50baf7;
+  margin-bottom: 30px;
 }
 
 .css {
-  width: 80%;
-  background-color: #f75058;
-  margin-bottom: 20px;
+  width: 92%;
+  background-color: #50baf7;
+  margin-bottom: 30px;
 }
 
 .js {
-  width: 70%;
-  background-color: #f75058;
-  margin-bottom: 20px;
+  width: 89%;
+  background-color: #50baf7;
+  margin-bottom: 30px;
 }
 
 .git {
-  width: 65%;
-  background-color: #f75058;
-  margin-bottom: 20px;
+ width: 86%;
+  background-color: #50baf7;
+  margin-bottom: 30px;
 }
 
 .github {
-  width: 60%;
-  background-color: #f75058;
-  margin-bottom: 20px;
+  width: 83%;
+  background-color: #50baf7;
+  margin-bottom: 30px;
 }
 
 /* ------------------------ Toaster message --------------------------------------------------------- */
