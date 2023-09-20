@@ -179,11 +179,11 @@ section {
   width: 150px;
   height: 40px;
   border-radius: 12px;
-  background-color: #1388cc;
+  background-color: #1080c0;
   border-style: none;
   margin-top: 20px;
   margin-left: 20px;
-
+  color: white;
 }
 .title h1 {
   margin-bottom: 10px;
@@ -325,7 +325,7 @@ form .btn button {
 
 .about-me {
   display: flex;
-  align-items: center;
+
   height: 100vh;
   text-align: justify;
   width: 100%;
@@ -334,18 +334,28 @@ form .btn button {
 .about-me .about-content {
   width: 50%;
   padding: 2rem;
-  /* border: #ce1010 solid; */
+  font-family: sans-serif;
+  margin-right: 5rem;
+  margin-top: 12rem;
+
+}
+.about-content button{
+  background-color: #1080c0;
+  width: 80px;
+  height: 30px;
+  border-style: none;
+  margin-top: 2rem;
+  color: white;
 }
 
 .about-me .about-content h1 {
-  padding-bottom: 4rem;
+  padding-bottom: 3rem;
 
 }
 
 .about-me .about-image {
   width: 45%;
   padding: 8rem;
-  padding-top: 6rem;
   /* border: #bb1212 solid; */
 }
 
