@@ -565,13 +565,13 @@ padding-bottom: 20px; */
     width: 80%;
   }
 
-  .previous {
+  /* .previous {
     background-color: #1388cc;
     color: black;
     /* margin-left: 5px;
   padding-bottom: 20px; */
     padding: 8px 16px;
-  }
+  } */
 
   .next {
     margin-right: 70px;
