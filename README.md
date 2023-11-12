@@ -1,2 +1,2 @@
-# My-brand
+# My-Brand
 
